@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio +Saber - Educação que forma mentes, valores e futuros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2a7d5d;
+            --light-green: #3a9d7d;
+            --dark-green: #1a6d4d;
+            --accent-warm: #f5a623;
+            --light-warm: #f8d568;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --text-color: #333333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark-green);
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-warm);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--dark-green);
+        }
+
+        .logo-subtext {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active {
+            color: var(--primary-green);
+        }
+
+        nav ul li a.active:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-green);
+            bottom: -5px;
+            left: 0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btns .btn {
+            font-size: 1.1rem;
+            padding: 16px 40px;
+        }
+
+        /* Highlights */
+        .highlights {
+            background-color: var(--light-gray);
+        }
+
+        .highlights-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .values-list {
+            margin-top: 30px;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .value-icon {
+            color: var(--accent-warm);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Education Levels */
+        .education {
+            background-color: var(--light-gray);
+        }
+
+        .levels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .level-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .level-header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .level-header h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .level-body {
+            padding: 25px;
+        }
+
+        .level-body ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+
+        .level-body li {
+            margin-bottom: 8px;
+        }
+
+        /* Parents Area */
+        .parents-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .parent-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-green);
+            transition: var(--transition);
+        }
+
+        .parent-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .parent-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Image Showcase */
+        .image-showcase {
+            margin: 60px 0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .showcase-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .showcase-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo .logo-text {
+            color: var(--white);
+        }
+
+        .footer-logo .logo-subtext {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-warm);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: var(--medium-gray);
+        }
+
+        .faq-question.active {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .image-gallery, .showcase-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .image-gallery, .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-graduation-cap logo-icon"></i>
+                <div>
+                    <div class="logo-text">Colégio +Saber</div>
+                    <div class="logo-subtext">Educação que transforma</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#education">Ensino</a></li>
+                    <li><a href="#parents">Área dos Pais</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#contact">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Educação que forma mentes, valores e futuros</h1>
+            <p>No Colégio +Saber, acreditamos que cada criança tem potencial único. Oferecemos um ambiente seguro e estimulante onde os alunos desenvolvem competências académicas e valores para a vida.</p>
+            <div class="hero-btns">
+                <a href="#parents" class="btn">Sou Pai / Encarregado</a>
+                <a href="#contact" class="btn">Agendar Visita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlights-container">
+                <div class="highlight-card">
+                    <i class="fas fa-shield-alt highlight-icon"></i>
+                    <h3>Segurança</h3>
+                    <p>Ambiente protegido e monitorizado para o bem-estar dos nossos alunos.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-chalkboard-teacher highlight-icon"></i>
+                    <h3>Qualidade de Ensino</h3>
+                    <p>Corpo docente qualificado e metodologias educativas modernas.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-user-friends highlight-icon"></i>
+                    <h3>Acompanhamento Individual</h3>
+                    <p>Atenção personalizada ao desenvolvimento académico e emocional de cada aluno.</p>
+                </div>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fachada da escola">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professora ensinando">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Sala de aula moderna">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre o Colégio +Saber</h2>
+                <p>Conheça nossa história e valores educacionais</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Uma instituição comprometida com o futuro</h2>
+                    <p>Localizado no coração do Zimpeto em Maputo, o Colégio +Saber tem como missão educar com qualidade, valores e responsabilidade social, formando cidadãos críticos, confiantes e preparados para os desafios do futuro.</p>
+                    <p>Acreditamos numa educação que vai além da transmissão de conhecimentos, focando no desenvolvimento integral do aluno e na parceria constante com as famílias.</p>
+                    
+                    <div class="values-list">
+                        <h3>Nossos Valores</h3>
+                        <div class="value-item">
+                            <i class="fas fa-heart value-icon"></i>
+                            <span>Respeito e empatia nas relações</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-balance-scale value-icon"></i>
+                            <span>Disciplina com compreensão</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-handshake value-icon"></i>
+                            <span>Responsabilidade e ética</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users value-icon"></i>
+                            <span>Parceria constante com os pais</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Colégio +Saber - Ambiente escolar">
+                </div>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1462536943532-57a629f6cc60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Alunos em atividade de laboratório">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Professora com alunos">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" alt="Crianças aprendendo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Levels -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Níveis de Ensino</h2>
+                <p>Uma jornada educativa completa do início ao secundário</p>
+            </div>
+            
+            <div class="levels-container">
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Creche</h3>
+                        <p>6 meses - 3 anos</p>
+                    </div>
+                    <div class="level-body">
+                        <p>Ambiente seguro e estimulante para os primeiros anos de desenvolvimento.</p>
+                        <ul>
+                            <li>Estimulação sensorial e psicomotora</li>
+                            <li>Socialização e desenvolvimento emocional</li>
+                            <li>Alimentação equilibrada e cuidados personalizados</li>
+                        </ul>
+                        <a href="#contact" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+                
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Ensino Primário</h3>
+                        <p>1ª - 7ª classe</p>
+                    </div>
+                    <div class="level-body">
+                        <p>Formação académica sólida com desenvolvimento de competências sociais.</p>
+                        <ul>
+                            <li>Currículo nacional enriquecido</li>
+                            <li>Inglês intensivo desde a 1ª classe</li>
+                            <li>Atividades extracurriculares diversificadas</li>
+                        </ul>
+                        <a href="#contact" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+                
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Ensino Secundário</h3>
+                        <p>8ª - 12ª classe</p>
+                    </div>
+                    <div class="level-body">
+                        <p>Preparação para o ensino superior e para a vida adulta com responsabilidade.</p>
+                        <ul>
+                            <li>Orientação vocacional e académica</li>
+                            <li>Preparação para exames nacionais</li>
+                            <li>Projetos de intervenção comunitária</li>
+                        </ul>
+                        <a href="#contact" class="btn">Mais Informações</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Crianças na creche">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" alt="Alunos do primário">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Alunos do secundário">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parents Area -->
+    <section id="parents">
+        <div class="container">
+            <div class="section-title">
+                <h2>Área dos Pais</h2>
+                <p>Transparência e comunicação no acompanhamento do seu educando</p>
+            </div>
+            
+            <div class="parents-container">
+                <div class="parent-card">
+                    <i class="fas fa-chart-line parent-icon"></i>
+                    <h3>Transparência Académica</h3>
+                    <p>Acesso online a relatórios de desempenho, faltas e avaliações. Reuniões periódicas com professores e diretores de turma.</p>
+                </div>
+                
+                <div class="parent-card">
+                    <i class="fas fa-comments parent-icon"></i>
+                    <h3>Comunicação Escola-Família</h3>
+                    <p>Canais diretos com a direção e professores. Aplicativo móvel com notificações importantes e agenda escolar.</p>
+                </div>
+                
+                <div class="parent-card">
+                    <i class="fas fa-hands-helping parent-icon"></i>
+                    <h3>Acompanhamento Personalizado</h3>
+                    <p>Plano individual de desenvolvimento para cada aluno. Apoio psicopedagógico e orientação vocacional.</p>
+                </div>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Reunião de pais e professores">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Pai ajudando filho com lição">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Comunicação entre escola e família">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como é feita a comunicação com os pais?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Utilizamos múltiplos canais: reuniões periódicas, aplicativo escolar com notificações, e-mail, telefone e portal online com informações académicas. Acreditamos que uma comunicação clara e constante é fundamental para o sucesso educativo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais são os horários de funcionamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O colégio funciona das 7h00 às 17h30. A componente letiva varia por nível de ensino, com atividades extracurriculares no período da tarde. Oferecemos também serviço de prolongamento de horário para pais com necessidades específicas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Qual a vossa abordagem à disciplina?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Praticamos a disciplina positiva, que foca na compreensão das regras, no desenvolvimento da responsabilidade e no respeito mútuo. Em vez de punições, trabalhamos com consequências naturais e lógicas, sempre em diálogo com os alunos e famílias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeria</h2>
+                <p>Conheça o nosso ambiente e atividades</p>
+            </div>
+            
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Salas de aula modernas">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Alunos em atividade">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professores em interação">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Infraestrutura escolar">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" alt="Crianças aprendendo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Aula em andamento">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1462536943532-57a629f6cc60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Estudantes concentrados">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professor ensinando">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professora ajudando aluno">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Atividade em grupo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Biblioteca escolar">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Área de recreio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactos & Matrículas</h2>
+                <p>Estamos prontos para caminhar consigo na educação do seu filho</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Entre em contacto connosco</h3>
+                    <p>Estamos disponíveis para esclarecer todas as suas dúvidas e agendar uma visita ao colégio. Venha conhecer nossas instalações e nossa proposta educativa.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Av. de Moçambique, Parcela 7188<br>Zimpeto – Maputo, Moçambique</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>+258 85 248 0000<br>+258 87 248 0000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>info@saber.edu.mz</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/258852480000" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Solicitar Informações</h3>
+                    <form id="infoForm">
+                        <div class="form-group">
+                            <label for="parentName">Nome do Pai/Encarregado *</label>
+                            <input type="text" id="parentName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="studentName">Nome do Aluno *</label>
+                            <input type="text" id="studentName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="studentGrade">Classe Pretendida *</label>
+                            <select id="studentGrade" class="form-control" required>
+                                <option value="">Selecione a classe</option>
+                                <option value="creche">Creche</option>
+                                <option value="primaria">Ensino Primário</option>
+                                <option value="secundario">Ensino Secundário</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem (opcional)</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tem alguma questão específica?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Solicitar Informações</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Atividades extracurriculares">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Eventos escolares">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ambiente escolar">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; margin-bottom: 20px;">Localização</h3>
+                <div style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.464288263937!2d32.56786021502811!3d-25.947230983541447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee69b7f8e002f29%3A0x63e6c28aa83e5f8a!2sZimpeto%2C%20Maputo%2C%20Mozambique!5e0!3m2!1sen!2s!4v1659446781238!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a href="#home" class="logo">
+                        <i class="fas fa-graduation-cap logo-icon"></i>
+                        <div>
+                            <div class="logo-text">Colégio +Saber</div>
+                            <div class="logo-subtext">Educação que transforma</div>
+                        </div>
+                    </a>
+                    <p style="margin-top: 15px; color: rgba(255, 255, 255, 0.8);">Formando cidadãos críticos, confiantes e preparados para o futuro desde 2010.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre o Colégio</a></li>
+                        <li><a href="#education">Níveis de Ensino</a></li>
+                        <li><a href="#parents">Área dos Pais</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#contact">Matrículas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contactos</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. de Moçambique, Parcela 7188, Zimpeto – Maputo</p>
+                    <p><i class="fas fa-phone"></i> +258 85 248 0000</p>
+                    <p><i class="fas fa-phone"></i> +258 87 248 0000</p>
+                    <p><i class="fas fa-envelope"></i> info@saber.edu.mz</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Colégio +Saber. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/258852480000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.querySelector('i').classList.remove('fa-chevron-up');
+                    q.querySelector('i').classList.add('fa-chevron-down');
+                });
+                
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('show');
+                });
+                
+                // If this wasn't active, open it
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.querySelector('i').classList.remove('fa-chevron-down');
+                    question.querySelector('i').classList.add('fa-chevron-up');
+                    answer.classList.add('show');
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('infoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const parentName = document.getElementById('parentName').value;
+            const studentName = document.getElementById('studentName').value;
+            const studentGrade = document.getElementById('studentGrade').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Create WhatsApp message
+            const message = `Olá! Gostaria de solicitar informações sobre matrícula no Colégio +Saber:%0A%0A*Pai/Encarregado:* ${parentName}%0A*Aluno:* ${studentName}%0A*Classe Pretendida:* ${studentGrade}%0A*Telefone:* ${phone}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/258852480000?text=${message}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show confirmation (could be enhanced with a modal)
+            alert('Obrigado! Será redirecionado para o WhatsApp para finalizar o pedido de informações.');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Nav link active state on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.add('active');
+                } else {
+                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
