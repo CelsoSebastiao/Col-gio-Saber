@@ -762,6 +762,111 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--white);
+        }
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+            box-shadow: 0 10px 20px rgba(42, 125, 93, 0.15);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary-green);
+            background-color: #fcffff;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--accent-warm);
+            color: var(--white);
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features i {
+            color: var(--primary-green);
+            margin-right: 10px;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .pricing-card .btn:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .pricing-card.popular .btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .pricing-card.popular .btn:hover {
+            background-color: var(--dark-green);
+        }
     </style>
 </head>
 
@@ -786,6 +891,7 @@
                     <li><a href="#home" class="active">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#education">Ensino</a></li>
+                    <li><a href="#pricing">Mensalidades</a></li>
                     <li><a href="#parents">Área dos Pais</a></li>
                     <li><a href="#gallery">Galeria</a></li>
                     <li><a href="#contact">Contactos</a></li>
@@ -985,6 +1091,78 @@
                         <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
                             alt="Alunos do secundário">
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investimento Educativo</h2>
+                <p>Planos transparentes e acessíveis para o futuro do seu filho</p>
+            </div>
+
+            <div class="pricing-container">
+                <!-- Creche -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Creche & Pré-Escolar</h3>
+                        <p>6 meses aos 5 anos</p>
+                    </div>
+                    <div class="price">
+                        Sob Consulta
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Alimentação completa incluída</li>
+                        <li><i class="fas fa-check"></i> Material didático básico</li>
+                        <li><i class="fas fa-check"></i> Seguro escolar</li>
+                        <li><i class="fas fa-check"></i> Atividades lúdicas e música</li>
+                    </ul>
+                    <a href="https://wa.me/258852480000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20os%20pre%C3%A7os%20para%20a%20Creche."
+                        class="btn" target="_blank">Consultar Valores</a>
+                </div>
+
+                <!-- Primário (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3>Ensino Primário</h3>
+                        <p>1ª à 7ª Classe</p>
+                    </div>
+                    <div class="price">
+                        Sob Consulta
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Todo o currículo nacional</li>
+                        <li><i class="fas fa-check"></i> Inglês e Informática</li>
+                        <li><i class="fas fa-check"></i> Acesso à Biblioteca</li>
+                        <li><i class="fas fa-check"></i> Clubes de Desporto</li>
+                        <li><i class="fas fa-check"></i> Apoio ao estudo</li>
+                    </ul>
+                    <a href="https://wa.me/258852480000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20os%20pre%C3%A7os%20para%20o%20Ensino%20Prim%C3%A1rio."
+                        class="btn" target="_blank">Consultar Valores</a>
+                </div>
+
+                <!-- Secundário -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Ensino Secundário</h3>
+                        <p>8ª à 12ª Classe</p>
+                    </div>
+                    <div class="price">
+                        Sob Consulta
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Preparação para exames</li>
+                        <li><i class="fas fa-check"></i> Laboratórios de Ciências</li>
+                        <li><i class="fas fa-check"></i> Orientação Vocacional</li>
+                        <li><i class="fas fa-check"></i> Acesso à Área dos Pais Online</li>
+                        <li><i class="fas fa-check"></i> Wi-Fi para pesquisa</li>
+                    </ul>
+                    <a href="https://wa.me/258852480000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20os%20pre%C3%A7os%20para%20o%20Ensino%20Secund%C3%A1rio."
+                        class="btn" target="_blank">Consultar Valores</a>
                 </div>
             </div>
         </div>
@@ -1426,7 +1604,7 @@
 
 
         // Scroll Animations - Intersection Observer
-        const revealElements = document.querySelectorAll('section, .card, .highlight-card, .showcase-item, .gallery-item');
+        const revealElements = document.querySelectorAll('section, .card, .highlight-card, .showcase-item, .gallery-item, .pricing-card');
 
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
